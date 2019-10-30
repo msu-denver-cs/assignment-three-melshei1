@@ -1,6 +1,6 @@
 class PartsController < ApplicationController
   before_action :set_part, only: [:show, :edit, :update, :destroy]
-
+before_action  :authenticate_user!
   # GET /parts
   # GET /parts.json
   def index
@@ -25,7 +25,6 @@ class PartsController < ApplicationController
   # POST /parts.json
   def create
     @part = Part.new(part_params)
-
     respond_to do |format|
       if @part.save
         format.html { redirect_to @part, notice: 'Part was successfully created.' }
