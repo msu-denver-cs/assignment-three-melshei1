@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
+
+<!-- Create a navigation bar using URL helpers for Adding a car -->
+<h2>
+  <%= link_to "Add Car" , cars_url %>
+</h2>
+
 <h1>Parts</h1>
 <%= form_tag parts_path, :method =>'get' do %>
   <%= text_field_tag :search, params[:search] %>
